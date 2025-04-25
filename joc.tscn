@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3jmxx56l78sq"]
+[gd_scene load_steps=3 format=3 uid="uid://c3jmxx56l78sq"]
 
 [ext_resource type="PackedScene" uid="uid://dr4h0mj4bg5gk" path="res://player.tscn" id="1_ncd8m"]
-[ext_resource type="PackedScene" uid="uid://oetni1nghc4l" path="res://paret.tscn" id="2_gdy83"]
-[ext_resource type="PackedScene" uid="uid://dwh1vkp4rb5qr" path="res://area_2d.tscn" id="3_gdy83"]
+[ext_resource type="PackedScene" uid="uid://6el2g4qubbd6" path="res://ground.tscn" id="2_ncd8m"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(27, 518)
 
 [node name="Player" parent="." instance=ExtResource("1_ncd8m")]
-position = Vector2(33, -436)
+position = Vector2(32, 556)
 
-[node name="Paret" parent="." instance=ExtResource("2_gdy83")]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+offset = Vector2(100, 0)
+limit_left = 0
+limit_top = 100
+limit_bottom = 650
+position_smoothing_enabled = true
+position_smoothing_speed = 100.0
+editor_draw_screen = false
 
-[node name="Area2D" parent="." instance=ExtResource("3_gdy83")]
-position = Vector2(271, -106)
+[node name="StaticBody2D" parent="." instance=ExtResource("2_ncd8m")]
